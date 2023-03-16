@@ -48,22 +48,22 @@ function playRound (playerChoice, computerChoice) {
 // five round game
 
 function game() {
-    for(let i = 0; i < 5; i++) {
+    for (let i = 0; i < 5; i++) {
         let computerChoice = getComputerChoice();
         let playerChoice = prompt("Choose rock, paper or scissors: ");
-        playerChoice = playerChoice.toLowerCase();
-        if(playerChoice === "") {
-            alert("You should write rock, paper or scissors!");
+        playerChoice = playerChoice.toLocaleLowerCase();
+        if (playerChoice == "") {
+            alert("You should write rock, paper or scissors!")
         } else {
             playRound(playerChoice, computerChoice);
-            round ++
-            console.log("This is the round number " round);
+            round++;
+            console.log("This is the round number " + round);
         }
     }
-    if (playerWins>computerWins) {
+    if (playerWins > computerWins) {
         alert("You WIN!");
     } else if (playerWins === computerWins) {
-        alert("It's a TIE!");
+        alert("Game TIE!");
     } else {
         alert("Computer BEATS you!");
     }
