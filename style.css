@@ -4,19 +4,30 @@
     box-sizing: border-box;
 }
 
-.container {
-    margin: 0 auto;
-    max-height: 745px;
-    background-color: rgb(243, 181, 99);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+body {
+    background-color: rgba(34, 34, 34, 0.663);
+}
+
+footer {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 h1 {
     text-align: center;
     font-size: 40px;
-    padding: 20px;
+    padding-top: 20px;
+}
+
+.container {
+    margin: 80px;
+    box-shadow: 2px 2px 4px #121212;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .choose-text {

@@ -31,8 +31,9 @@ const LOSE = 2;
 function play(userChoice) {
     const getCompChoice = Math.floor(Math.random() * 3);
 
-    console.log(getCompChoice);
+}
 
+function getResult (userChoice, getCompChoice) {
     if (userChoice === getCompChoice) {
         return TIE;
 
