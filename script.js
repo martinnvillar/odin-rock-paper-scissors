@@ -1,6 +1,22 @@
-// game options variable
+// game options variables and functions
 
 const gameOptions = ["rock", "paper", "scissors"];
+
+const ROCK = document.getElementById('rock');
+const PAPER = document.getElementById('paper');
+const SCISSORS = document.getElementById('scissors');
+
+ROCK.addEventListener('click', () => {
+    console.log('you choose rock');
+})
+
+PAPER.addEventListener('click', () => {
+
+})
+
+SCISSORS.addEventListener('click', () => {
+
+})
 
 // random computer choice function
 
