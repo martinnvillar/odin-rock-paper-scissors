@@ -46,10 +46,10 @@ h1 {
     gap: 30px;
 }
 
-#score {
+.score {
+    display:inline-block;
     font-size: 25px;
-    display: flex;
-    justify-content: center;
+    text-align: center;
     margin-bottom: 30px;
 }
 

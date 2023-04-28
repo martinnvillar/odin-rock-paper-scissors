@@ -1,4 +1,8 @@
 // user options and buttons
+let PLAYER_SCORE = 0;
+let CPU_SCORE = 0;
+const scoreElement = document.getElementById('scorePoints')
+const cpuScore = document.getElementById('scoreCpu')
 
 const ROCK = 0;
 const PAPER = 1;
@@ -8,7 +12,6 @@ const rockBtn = document.getElementById('rock');
 const paperBtn = document.getElementById('paper');
 const scissorsBtn = document.getElementById('scissors');
 const scoreTxt = document.getElementById('score');
-const resultTxt = document.getElementById('result');
 
 rockBtn.addEventListener('click', () => {
     play(ROCK);
@@ -37,13 +40,21 @@ function play(userChoice) {
 
     switch(score){
         case TIE:
-            scoreTxt.innerHTML = 'Tie!';
+            scoreTxt.innerText = 'Tie!';
             break;
         case WIN:
-            scoreTxt.innerHTML = 'You win!';
+            scoreTxt.innerText = 'You win!';
+            PLAYER_SCORE += 1
+             // CPU_SCORE ? CPU_SCORE -= 1 : CPU_SCORE // ternario
+            setScore(PLAYER_SCORE)
+            setCpuScore(CPU_SCORE)
             break;
         case LOSE:
-            scoreTxt.innerHTML = 'You lose!';
+            // PLAYER_SCORE ? PLAYER_SCORE -= 1 : PLAYER_SCORE // ternario
+            CPU_SCORE += 1
+            scoreTxt.innerText = 'You lose!';
+            setScore(PLAYER_SCORE)
+            setCpuScore(CPU_SCORE)
             break;
     }
 }
@@ -66,12 +77,18 @@ function getResult (userChoice, getCompChoice) {
     }
 }
 
-function scoreResult (score) {
-    if (TIE++) {
-        resultTxt.innerHTML('0-0');
-    } else if (WIN++){
-        resultTxt.innerHTML('1-0');
-    } else if (LOSE++) {
-        resultTxt.innerHTML('0-1');
+function setScore (score) {
+    scoreElement.innerText = score
+    if (score == 5){
+        alert('Gano player')
+        window.location.reload()
     }
 }
+
+function setCpuScore (score) {
+    cpuScore.innerText = score
+    if (score == 5) {
+    alert('Gano cpu')
+    window.location.reload()
+    }
+    }
