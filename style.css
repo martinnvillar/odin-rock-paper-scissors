@@ -46,6 +46,13 @@ h1 {
     gap: 30px;
 }
 
+#score {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
 #playfield > button > img {
     width: 100%;
     max-width: 250px;

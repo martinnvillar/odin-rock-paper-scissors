@@ -7,6 +7,8 @@ const SCISSORS = 2;
 const rockBtn = document.getElementById('rock');
 const paperBtn = document.getElementById('paper');
 const scissorsBtn = document.getElementById('scissors');
+const scoreTxt = document.getElementById('score');
+const resultTxt = document.getElementById('result');
 
 rockBtn.addEventListener('click', () => {
     play(ROCK);
@@ -35,13 +37,13 @@ function play(userChoice) {
 
     switch(score){
         case TIE:
-            console.log(`${getCompChoice} tie!`);
+            scoreTxt.innerHTML = 'Tie!';
             break;
         case WIN:
-            console.log(`${getCompChoice} you win!`);
+            scoreTxt.innerHTML = 'You win!';
             break;
         case LOSE:
-            console.log(`${getCompChoice} you lose!`);
+            scoreTxt.innerHTML = 'You lose!';
             break;
     }
 }
@@ -49,7 +51,6 @@ function play(userChoice) {
 function getResult (userChoice, getCompChoice) {
     if (userChoice === getCompChoice) {
         return TIE;
-
     } else if (userChoice === ROCK && getCompChoice === PAPER) {
         return LOSE;
     } else if (userChoice === ROCK && getCompChoice === SCISSORS) {
@@ -63,22 +64,14 @@ function getResult (userChoice, getCompChoice) {
     } else if (userChoice === SCISSORS && getCompChoice === ROCK) {
         return LOSE;
     }
-    
+}
 
-    // } else if (userChoice === ROCK ) {
-
-    //     if (getCompChoice === PAPER) return LOSE;
-    //     if (getCompChoice === SCISSORS) return WIN;
-
-    // } else if (userChoice === PAPER) {
-
-    //     if (getCompChoice === SCISSORS) return LOSE;
-    //     if (getCompChoice === ROCK) return WIN;
-
-    // } else if (userChoice === SCISSORS) {
-
-    //     if (getCompChoice === ROCK) return LOSE;
-    //     if (getCompChoice === PAPER) return WIN;
-
-    // } 
+function scoreResult (score) {
+    if (TIE++) {
+        resultTxt.innerHTML('0-0');
+    } else if (WIN++){
+        resultTxt.innerHTML('1-0');
+    } else if (LOSE++) {
+        resultTxt.innerHTML('0-1');
+    }
 }
