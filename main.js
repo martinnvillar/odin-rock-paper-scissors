@@ -30,27 +30,55 @@ const LOSE = 2;
 
 function play(userChoice) {
     const getCompChoice = Math.floor(Math.random() * 3);
+    
+    const score = getResult(userChoice, getCompChoice);
 
+    switch(score){
+        case TIE:
+            console.log(`${getCompChoice} tie!`);
+            break;
+        case WIN:
+            console.log(`${getCompChoice} you win!`);
+            break;
+        case LOSE:
+            console.log(`${getCompChoice} you lose!`);
+            break;
+    }
 }
 
 function getResult (userChoice, getCompChoice) {
     if (userChoice === getCompChoice) {
         return TIE;
 
-    } else if (userChoice === ROCK) {
+    } else if (userChoice === ROCK && getCompChoice === PAPER) {
+        return LOSE;
+    } else if (userChoice === ROCK && getCompChoice === SCISSORS) {
+        return WIN;
+    } else if (userChoice === PAPER && getCompChoice === ROCK) {
+        return WIN;
+    } else if (userChoice === PAPER && getCompChoice === SCISSORS) {
+        return LOSE;
+    } else if (userChoice === SCISSORS && getCompChoice === PAPER) {
+        return WIN;
+    } else if (userChoice === SCISSORS && getCompChoice === ROCK) {
+        return LOSE;
+    }
+    
 
-        if (getCompChoice === PAPER) return LOSE;
-        if (getCompChoice === SCISSORS) return WIN;
+    // } else if (userChoice === ROCK ) {
 
-    } else if (userChoice === PAPER) {
+    //     if (getCompChoice === PAPER) return LOSE;
+    //     if (getCompChoice === SCISSORS) return WIN;
 
-        if (getCompChoice === SCISSORS) return LOSE;
-        if (getCompChoice === ROCK) return WIN;
+    // } else if (userChoice === PAPER) {
 
-    } else if (userChoice === SCISSORS) {
+    //     if (getCompChoice === SCISSORS) return LOSE;
+    //     if (getCompChoice === ROCK) return WIN;
 
-        if (getCompChoice === ROCK) return LOSE;
-        if (getCompChoice === PAPER) return WIN;
+    // } else if (userChoice === SCISSORS) {
 
-    } 
+    //     if (getCompChoice === ROCK) return LOSE;
+    //     if (getCompChoice === PAPER) return WIN;
+
+    // } 
 }
