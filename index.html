@@ -4,52 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icon0.png">
     <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <title>Rock, paper, scissors</title>
+    <title>Rock Paper Scissors</title>
 </head>
 <body>
     
     <div class="container">
 
-        <h1>Rock, paper, scissors</h1>
+        <h1>Rock Paper Scissors</h1>
 
         <div class="choose-text">
-            Choose your weapon to get started.
+            - Choose your weapon to get started -
         </div>
 
-        <div class="score" id="score"></div>
+        <div class="score" id="score"><br></div>
         
         <div id="playfield">
             
             <button id="rock" class="btn">
-                <img src="img/rock.png">
+                <img src="img/rock.png" class="weaponImg">
             </button>
             <button id="paper" class="btn">
-                <img src="img/paper.png">
+                <img src="img/paper.png" class="weaponImg">
             </button>
             <button id="scissors" class="btn">
-                <img src="img/scissors.png">
+                <img src="img/scissors.png" class="weaponImg">
             </button>
-            
-        </div>
-        
-        <div class="cointainer">
-            <div id="points" class="score">
-                <h2>PLAYER:</h2>
-                <h2 id="scorePoints">0</div>
-            </div>
-            
-            <div id="points" class="score">
-                <h2>CPU:</h2>
-                <h2 id="scoreCpu">0</h2>
-            </div>
-        </div>
             
         </div>
 
+        <div class="scoreContainer">
+            <div id= "points" class="score">
+                <h2>PLAYER:</h2>
+                <h2 id="scorePoints" class="number">0</h2>
+            </div>
+            <div id="cpuPick"></div>
+            <div id="points" class="score">
+                <h2>CPU:</h2>
+                <h2 id="scoreCpu" class="number">0</h2>
+            </div>
+        </div>
+
+    </div>
+
     <footer>
-        by: martinnvillar © The Odin Project 2023
+        martinnvillar © The Odin Project 2023
     </footer>
 </body>
 </html>

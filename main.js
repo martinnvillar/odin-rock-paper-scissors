@@ -1,17 +1,19 @@
 // user options and buttons
+
 let PLAYER_SCORE = 0;
 let CPU_SCORE = 0;
 const scoreElement = document.getElementById('scorePoints')
 const cpuScore = document.getElementById('scoreCpu')
 
-const ROCK = 0;
-const PAPER = 1;
-const SCISSORS = 2;
+const ROCK = 'Rock🪨';
+const PAPER = 'Paper📜';
+const SCISSORS = 'Scissors✂️';
 
 const rockBtn = document.getElementById('rock');
 const paperBtn = document.getElementById('paper');
 const scissorsBtn = document.getElementById('scissors');
 const scoreTxt = document.getElementById('score');
+const cpuPick = document.getElementById('cpuPick');
 
 rockBtn.addEventListener('click', () => {
     play(ROCK);
@@ -22,7 +24,7 @@ paperBtn.addEventListener('click', () => {
 })
 
 scissorsBtn.addEventListener('click', () => {
-    play(PAPER);
+    play(SCISSORS);
 })
 
 // game variables
@@ -33,8 +35,24 @@ const LOSE = 2;
 
 // game functions
 
+function cpuOption () {
+    const cpuNumber = Math.floor(Math.random() * 3);
+    switch (cpuNumber) {
+        case 0:
+            return ROCK;
+        case 1:
+            return PAPER;
+        case 2:
+            return SCISSORS;
+    }
+}
+
+
 function play(userChoice) {
-    const getCompChoice = Math.floor(Math.random() * 3);
+
+    const getCompChoice = cpuOption();
+
+    cpuPick.innerHTML = `CPU picks: ${getCompChoice}`;
     
     const score = getResult(userChoice, getCompChoice);
 
@@ -47,13 +65,13 @@ function play(userChoice) {
             PLAYER_SCORE += 1
              // CPU_SCORE ? CPU_SCORE -= 1 : CPU_SCORE // ternario
             setScore(PLAYER_SCORE)
-            setCpuScore(CPU_SCORE)
+            // setCpuScore(CPU_SCORE)
             break;
         case LOSE:
             // PLAYER_SCORE ? PLAYER_SCORE -= 1 : PLAYER_SCORE // ternario
             CPU_SCORE += 1
             scoreTxt.innerText = 'You lose!';
-            setScore(PLAYER_SCORE)
+            // setScore(PLAYER_SCORE)
             setCpuScore(CPU_SCORE)
             break;
     }
@@ -80,7 +98,7 @@ function getResult (userChoice, getCompChoice) {
 function setScore (score) {
     scoreElement.innerText = score
     if (score == 5){
-        alert('Gano player')
+        alert(`You've won the game! press OK to play again.`)
         window.location.reload()
     }
 }
@@ -88,7 +106,7 @@ function setScore (score) {
 function setCpuScore (score) {
     cpuScore.innerText = score
     if (score == 5) {
-    alert('Gano cpu')
-    window.location.reload()
+        alert('CPU wins! press OK to rematch.')
+        window.location.reload()
     }
-    }
+}
