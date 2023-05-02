@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration:underline;
+}
+
 @font-face {
     font-family: 'MyFont';
     src: url('webfonts/Chronosferdemo-0WGDo.otf') format('truetype');
