@@ -10,7 +10,6 @@
   }
 
 body {
-    padding-left: 110px;
     background-image: url(img/background.jpg);
 }
 
@@ -22,7 +21,6 @@ footer {
     margin-top: -25px;
     padding-bottom: 10px;
     justify-content: center;
-    padding-right: 90px;
     color: #ffffff;
     text-shadow: 2px 2px 2px #292929;
 }
@@ -150,4 +148,10 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.firstCont {
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
